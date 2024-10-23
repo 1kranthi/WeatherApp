@@ -1,7 +1,7 @@
 package com.example.weatherapp.model;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 public class Alert {
@@ -13,16 +13,15 @@ public class Alert {
     private String description;
     private LocalDateTime timestamp;
 
+    
     public Alert() {
     }
-
     public Alert(Long id, String alertType, String description, LocalDateTime timestamp) {
         this.id = id;
         this.alertType = alertType;
         this.description = description;
         this.timestamp = timestamp;
     }
-
     public Long getId() {
         return id;
     }
@@ -48,5 +47,5 @@ public class Alert {
         this.timestamp = timestamp;
     }
 
-   
+    
 }

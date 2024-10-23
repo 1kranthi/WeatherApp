@@ -1,78 +1,46 @@
 package com.example.weatherapp.model;
 
-import jakarta.persistence.*;
-import java.time.LocalDateTime;
-
-@Entity
-@Table(name = "weather_data")
 public class WeatherData {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
-    private String city;
-    private double temperature;
-    private double feelsLike;
+    private double temp;
+    private double tempMin;
+    private double tempMax;
     private String mainCondition;
-    private LocalDateTime timestamp;
 
-    public WeatherData() {}
-
-    public WeatherData(String city, double temperature, double feelsLike, String mainCondition, LocalDateTime timestamp) {
-        this.city = city;
-        this.temperature = temperature;
-        this.feelsLike = feelsLike;
+    
+    public WeatherData() {
+    }
+    
+    public WeatherData(double temp, double tempMin, double tempMax, String mainCondition) {
+        this.temp = temp;
+        this.tempMin = tempMin;
+        this.tempMax = tempMax;
         this.mainCondition = mainCondition;
-        this.timestamp = timestamp;
     }
-
-    // Getters and Setters
-    public Long getId() {
-        return id;
+    public double getTemp() {
+        return temp;
     }
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setTemp(double temp) {
+        this.temp = temp;
     }
-
-    public String getCity() {
-        return city;
+    public double getTempMin() {
+        return tempMin;
     }
-
-    public void setCity(String city) {
-        this.city = city;
+    public void setTempMin(double tempMin) {
+        this.tempMin = tempMin;
     }
-
-    public double getTemperature() {
-        return temperature;
+    public double getTempMax() {
+        return tempMax;
     }
-
-    public void setTemperature(double temperature) {
-        this.temperature = temperature;
+    public void setTempMax(double tempMax) {
+        this.tempMax = tempMax;
     }
-
-    public double getFeelsLike() {
-        return feelsLike;
-    }
-
-    public void setFeelsLike(double feelsLike) {
-        this.feelsLike = feelsLike;
-    }
-
     public String getMainCondition() {
         return mainCondition;
     }
-
     public void setMainCondition(String mainCondition) {
         this.mainCondition = mainCondition;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
-    }
-
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
-    }
+    
 }

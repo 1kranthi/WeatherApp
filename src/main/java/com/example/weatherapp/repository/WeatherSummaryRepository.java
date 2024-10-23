@@ -12,16 +12,11 @@ import java.util.List;
 @Transactional
 public interface WeatherSummaryRepository extends JpaRepository<WeatherSummary, Long> {
 
-    // Fetch summaries for a specific city
     List<WeatherSummary> findByCity(String city);
 
-    // Fetch summaries for a specific date
     List<WeatherSummary> findByDate(LocalDate date);
 
-    // Fetch summaries for a city on a specific date
     List<WeatherSummary> findByCityAndDate(String city, LocalDate date);
 
-    // Fetch all summaries before a certain date (for historical data)
     List<WeatherSummary> findByDateBefore(LocalDate date);
 }
-
